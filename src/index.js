@@ -1,3 +1,3 @@
-import { get2Pizzas } from './services/pizzaService.js';
+import { /* ObtenerPizza,  ObtenerPizzaID,*/ Eliminar } from './services/pizzaService.js';
 
-await get2Pizzas();
+await Eliminar(12);
