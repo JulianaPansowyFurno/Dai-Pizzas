@@ -38,3 +38,14 @@ export const Eliminar = async (Id) => {
     console.log(results);
 }
 
+export const Actualizar = async (Id, pizza) => {
+    const conn = await sql.connect(configDB);
+    const results = await conn.request()
+    .input("pId", Id)
+    .input("pNombre", pizza.nombre)
+    .input("pDescripcion", pizza.descripcion)
+    .input("pImporte", pizza.precio)
+    .input("pLibreGluten", pizza.libreGluten)
+    .query('UPDATE Pizzas SET Nombre = @pNombre, LibreGluten = @pLibreGluten , Importe = @pImporte, Descripcion = @pDescripcion WHERE Id = @pId');
+    console.log(results);
+}
